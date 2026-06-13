@@ -18,10 +18,11 @@ export interface Project {
     githubUrl?: string
 }
 
-export interface Certifications {
+export interface Certification {
     id: string
     title: string
-    issuer: 'Coursera' | 'Meta' | 'IBM'
+    issuer: 'Meta' | 'IBM'
+    platform: 'Coursera'
     year: number
 }
 
@@ -30,4 +31,15 @@ export interface VirtualExperience {
     company: string
     role: string
     tasks: string[]
+}
+
+export interface CandidateProfile {
+    name: string
+    title: string
+    tagline: string
+    location: string
+    skills: Skill[]
+    projects: Project[]
+    certifications: Certification[]
+    virtualExperiences: VirtualExperience[]
 }
