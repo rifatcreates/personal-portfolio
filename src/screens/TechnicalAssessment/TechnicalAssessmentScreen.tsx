@@ -1,12 +1,10 @@
 import { motion } from 'framer-motion'
 import { useAppStore } from '../../store/useAppStore'
-import { CandidateHeader } from './CandidateHeader'
-import { SkillsSection } from './SkillsSection'
-import { ProjectsSection } from './ProjectsSection'
-import { CredentialsSection } from './CredentialsSection'
+import { candidate } from '../../data/candidate'
+import { ProjectDeepDive } from './ProjectDeepDive'
 import { DURATION, EASING } from '../../constants/tokens'
 
-export function ResumeReviewScreen() {
+export function TechnicalAssessmentScreen() {
   const setScreen = useAppStore((state) => state.setScreen)
 
   return (
@@ -14,7 +12,7 @@ export function ResumeReviewScreen() {
       minHeight: '100vh',
       width: '100%',
       display: 'flex',
-      flexDirection: 'column'
+      flexDirection: 'column',
     }}>
 
       <div style={{
@@ -39,7 +37,7 @@ export function ResumeReviewScreen() {
           letterSpacing: '0.15em',
           color: 'var(--color-text-muted)',
         }}>
-          STEP 02 OF 04
+          STEP 03 OF 04
         </span>
       </div>
 
@@ -50,19 +48,37 @@ export function ResumeReviewScreen() {
           margin: '0 auto',
           padding: '48px 24px',
         }}>
-          <CandidateHeader />
-          <ProjectsSection />
-          <SkillsSection />
-          <CredentialsSection />
+          <div style={{ marginBottom: '28px' }}>
+            <p style={{
+              fontFamily: 'var(--font-mono)',
+              fontSize: '11px',
+              letterSpacing: '0.15em',
+              color: 'var(--color-text-muted)',
+              marginBottom: '8px',
+            }}>
+              TECHNICAL ASSESSMENT
+            </p>
+            <h1 style={{
+              fontSize: '28px',
+              fontWeight: 600,
+              color: 'var(--color-text-primary)',
+            }}>
+              Engineering Review
+            </h1>
+          </div>
+
+          {candidate.projects.map((project, index) => (
+            <ProjectDeepDive key={project.id} project={project} index={index} />
+          ))}
 
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            transition={{ duration: DURATION.normal / 1000, delay: 0.5, ease: EASING.outExpo }}
-            style={{ marginTop: '24px', display: 'flex', justifyContent: 'flex-end' }}
+            transition={{ duration: DURATION.normal / 1000, delay: 0.6, ease: EASING.outExpo }}
+            style={{ marginTop: '12px', display: 'flex', justifyContent: 'flex-end' }}
           >
             <motion.button
-              onClick={() => setScreen('technical-assessment')}
+              onClick={() => setScreen('cross-examination')}
               whileHover={{ scale: 1.01 }}
               whileTap={{ scale: 0.98 }}
               style={{
@@ -78,7 +94,7 @@ export function ResumeReviewScreen() {
                 letterSpacing: '0.02em',
               }}
             >
-              Review Technical Work →
+              Proceed to Interview →
             </motion.button>
           </motion.div>
         </div>

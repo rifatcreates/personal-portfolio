@@ -6,7 +6,7 @@ export default function EntryScreen() {
     const setScreen = useAppStore((state) => state.setScreen)
 
     return (
-        <div className="min-h-screen w-full flex flex-col" style={{ backgroundColor: 'var(--color-bg-primary)' }}>
+        <div className="min-h-screen w-full flex flex-col" >
             <div className="flex items-center justify-between px-8 py-5" style={{ borderBottom: '1px solid var(--color-border-subtle)'}}>
 
                 <SystemBadge />

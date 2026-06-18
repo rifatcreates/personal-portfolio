@@ -12,8 +12,7 @@ export function RoleBriefingScreen() {
       minHeight: '100vh',
       width: '100%',
       display: 'flex',
-      flexDirection: 'column',
-      backgroundColor: 'var(--color-bg-primary)',
+      flexDirection: 'column'
     }}>
 
       {/* Top bar */}
