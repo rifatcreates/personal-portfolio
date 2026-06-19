@@ -3,6 +3,7 @@ import EntryScreen from "./screens/Entry/EntryScreen"
 import { RoleBriefingScreen } from "./screens/RoleBriefing/RoleBriefingScreen"
 import { ResumeReviewScreen } from "./screens/ResumeReview/ResumeReviewScreen"
 import { TechnicalAssessmentScreen } from "./screens/TechnicalAssessment/TechnicalAssessmentScreen"
+import { CrossExaminationScreen } from "./screens/CrossExamination/CrossExaminationScreen"
 
 function App() {
   const currentScreen = useAppStore((state) => state.currentScreen)
@@ -13,6 +14,7 @@ function App() {
       { currentScreen === 'role-briefing' && <RoleBriefingScreen /> }
       { currentScreen === 'resume-review' && <ResumeReviewScreen/> }
       { currentScreen === 'technical-assessment' && <TechnicalAssessmentScreen /> }
+      { currentScreen === 'cross-examination' && <CrossExaminationScreen /> }
     </>
   )
 }
