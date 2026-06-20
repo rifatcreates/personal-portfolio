@@ -3,8 +3,11 @@ import { useAppStore } from '../../store/useAppStore'
 import { CompanyHeader } from './CompanyHeader'
 import { JobDetails } from './JobDetails'
 import { DURATION, EASING } from '../../constants/tokens'
+import { BackButton } from '../../components/ui/BackButton'
+import { useScrollToTop } from '../../hooks/useScrollToTop'
 
 export function RoleBriefingScreen() {
+  useScrollToTop()
   const setScreen = useAppStore((state) => state.setScreen)
 
   return (
@@ -15,7 +18,6 @@ export function RoleBriefingScreen() {
       flexDirection: 'column'
     }}>
 
-      {/* Top bar */}
       <div style={{
         display: 'flex',
         alignItems: 'center',
@@ -23,7 +25,11 @@ export function RoleBriefingScreen() {
         padding: '20px 32px',
         borderBottom: '1px solid var(--color-border-subtle)',
         flexShrink: 0,
+        maxWidth: '960px',
+        margin: '0 auto',
+        width: '100%',
       }}>
+        <BackButton />
         <span style={{
           fontFamily: 'var(--font-mono)',
           fontSize: '11px',
@@ -45,14 +51,13 @@ export function RoleBriefingScreen() {
       <div style={{ flex: 1, overflowY: 'auto' }}>
         <div style={{
           width: '100%',
-          maxWidth: '680px',
+          maxWidth: '820px',
           margin: '0 auto',
           padding: '48px 24px',
         }}>
           <CompanyHeader />
           <JobDetails />
 
-          {/* CTA */}
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
@@ -86,6 +91,9 @@ export function RoleBriefingScreen() {
         padding: '16px 32px',
         borderTop: '1px solid var(--color-border-subtle)',
         flexShrink: 0,
+        maxWidth: '960px',
+        margin: '0 auto',
+        width: '100%',
       }}>
         <span style={{
           fontFamily: 'var(--font-mono)',

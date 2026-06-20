@@ -1,7 +1,7 @@
 export const company = {
     name: 'Arcova',
     tagline: 'Infrastructure for the next decade of fintech.',
-    location: 'Bangalore, India',
+    location: 'Palo Alto, California',
     stage: 'Series B',
     size: '120-180 employees',
     domain: 'Fintech / B2B SaaS',
@@ -9,7 +9,7 @@ export const company = {
     role: {
         title: 'Frontend Developer',
         type: 'Full-time',
-        level: 'Junior to Mid',
+        level: 'Entry-Level / Fresh Graduate',
         description:
         'Arcova is building the transaction intelligence layer that powers payment platforms across Southeast Asia. We move fast, care deeply about craft, and believe the frontend is a product — not a skin.',
         responsibilities: [

@@ -62,12 +62,17 @@ export function CredentialsSection() {
                 }}>
                   {cert.issuer}
                 </span>
-                <span style={{
-                  fontSize: '14px',
-                  color: 'var(--color-text-secondary)',
+                <a href={cert.verifyUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    style={{
+                      fontSize: '14px',
+                      color: 'var(--color-text-secondary)',
+                      textDecoration: 'none',
+                      borderBottom: '1px dotted var(--color-border)',
                 }}>
                   {cert.title}
-                </span>
+                </a>
               </div>
               <span style={{
                 fontFamily: 'var(--font-mono)',

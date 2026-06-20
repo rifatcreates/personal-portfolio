@@ -33,7 +33,7 @@ PROJECTS:
 ${candidate.projects
   .map(
     (p) =>
-      `- ${p.title}: ${p.description}\n  Tech: ${p.techStack.join(', ')}\n  Decisions: ${p.decisions.join(' | ')}`
+      `- ${p.title}: ${p.description}\n  Tech: ${p.techStack.join(', ')}\n  Decisions: ${p.decisions.join(' | ')}\n  Technical Details: ${p.detailedSummary}`
   )
   .join('\n')}
 

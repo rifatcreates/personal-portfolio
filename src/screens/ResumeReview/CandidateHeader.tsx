@@ -11,7 +11,7 @@ export function CandidateHeader() {
 
             <p style={{ fontSize: '16px', color: 'var(--color-accent)', fontWeight: 500, marginBottom: '12px' }} >{candidate.title}</p>
 
-            <p style={{ fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.7, maxWidth: '520px',marginBottom: '16px' }} >{candidate.tagline}</p>
+            <p style={{ fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.7, marginBottom: '16px' }} >{candidate.tagline}</p>
 
             <div style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
                 <span style={{ width: '6px', height: '6px', borderRadius: '50%', backgroundColor: 'var(--color-success)',display: 'inline-block' }} />

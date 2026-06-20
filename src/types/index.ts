@@ -14,6 +14,7 @@ export interface Project {
     description: string
     decisions: string[]
     techStack: string[]
+    detailedSummary: string,
     liveUrl?: string
     githubUrl?: string
 }
@@ -24,6 +25,7 @@ export interface Certification {
     issuer: 'Meta' | 'IBM'
     platform: 'Coursera'
     year: number
+    verifyUrl: string
 }
 
 export interface VirtualExperience {

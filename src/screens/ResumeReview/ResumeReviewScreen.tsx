@@ -5,8 +5,11 @@ import { SkillsSection } from './SkillsSection'
 import { ProjectsSection } from './ProjectsSection'
 import { CredentialsSection } from './CredentialsSection'
 import { DURATION, EASING } from '../../constants/tokens'
+import { BackButton } from '../../components/ui/BackButton'
+import { useScrollToTop } from '../../hooks/useScrollToTop'
 
 export function ResumeReviewScreen() {
+  useScrollToTop()
   const setScreen = useAppStore((state) => state.setScreen)
 
   return (
@@ -24,7 +27,11 @@ export function ResumeReviewScreen() {
         padding: '20px 32px',
         borderBottom: '1px solid var(--color-border-subtle)',
         flexShrink: 0,
+        maxWidth: '960px',
+        margin: '0 auto',
+        width: '100%',
       }}>
+        <BackButton />
         <span style={{
           fontFamily: 'var(--font-mono)',
           fontSize: '11px',
@@ -46,7 +53,7 @@ export function ResumeReviewScreen() {
       <div style={{ flex: 1, overflowY: 'auto' }}>
         <div style={{
           width: '100%',
-          maxWidth: '680px',
+          maxWidth: '820px',
           margin: '0 auto',
           padding: '48px 24px',
         }}>
@@ -88,6 +95,9 @@ export function ResumeReviewScreen() {
         padding: '16px 32px',
         borderTop: '1px solid var(--color-border-subtle)',
         flexShrink: 0,
+        maxWidth: '960px',
+        margin: '0 auto',
+        width: '100%',
       }}>
         <span style={{
           fontFamily: 'var(--font-mono)',

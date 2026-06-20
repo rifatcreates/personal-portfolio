@@ -5,8 +5,11 @@ import { QuestionInput } from './QuestionInput'
 import { SuggestedQuestions } from './SuggestedQuestions'
 import { ResponseDisplay } from './ResponseDisplay'
 import { DURATION, EASING } from '../../constants/tokens'
+import { BackButton } from '../../components/ui/BackButton'
+import { useScrollToTop } from '../../hooks/useScrollToTop'
 
 export function CrossExaminationScreen() {
+  useScrollToTop()
   const setScreen = useAppStore((state) => state.setScreen)
   const { response, isLoading, error, askQuestion } = useAIResponse()
 
@@ -25,7 +28,11 @@ export function CrossExaminationScreen() {
         padding: '20px 32px',
         borderBottom: '1px solid var(--color-border-subtle)',
         flexShrink: 0,
+        maxWidth: '960px',
+        margin: '0 auto',
+        width: '100%',
       }}>
+        <BackButton />
         <span style={{
           fontFamily: 'var(--font-mono)',
           fontSize: '11px',
@@ -47,7 +54,7 @@ export function CrossExaminationScreen() {
       <div style={{ flex: 1, overflowY: 'auto' }}>
         <div style={{
           width: '100%',
-          maxWidth: '680px',
+          maxWidth: '820px',
           margin: '0 auto',
           padding: '48px 24px',
         }}>
@@ -115,6 +122,9 @@ export function CrossExaminationScreen() {
         padding: '16px 32px',
         borderTop: '1px solid var(--color-border-subtle)',
         flexShrink: 0,
+        maxWidth: '960px',
+        margin: '0 auto',
+        width: '100%',
       }}>
         <span style={{
           fontFamily: 'var(--font-mono)',
