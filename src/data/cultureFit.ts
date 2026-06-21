@@ -15,8 +15,8 @@ export const cultureFitTraits = [
     description: "I use AI to learn faster and move quicker, but I make it a rule to understand every line before it ships. AI speeds up my learning — it doesn't replace it.",
   },
   {
-    id: 'eager-to-learn',
-    title: 'Eager to Learn from Feedback',
-    description: "I've only built solo so far, so I haven't been tested in a real team environment yet — and I'm genuinely excited for that. I take feedback well and ask questions instead of guessing.",
+    id: 'honest-about-gaps',
+    title: 'Honest About What I Don\'t Know Yet',
+    description: 'Self-taught means uneven exposure — some tools I\'ve used once, some I haven\'t touched in months. I say so directly, and I close the gap fast once I\'m pointed at it.',
   },
 ] as const

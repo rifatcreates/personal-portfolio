@@ -115,14 +115,21 @@ export function CredentialsSection() {
               marginBottom: '10px',
             }}>
               <div>
-                <p style={{
-                  fontSize: '15px',
-                  fontWeight: 500,
-                  color: 'var(--color-text-primary)',
-                  marginBottom: '2px',
-                }}>
+                <a href={exp.verifyUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  style={{
+                    fontSize: '15px',
+                    fontWeight: 500,
+                    color: 'var(--color-text-primary)',
+                    textDecoration: 'none',
+                    borderBottom: '1px dotted var(--color-border)',
+                    display: 'inline-block',
+                    marginBottom: '2px',
+                  }}
+                >
                   {exp.company}
-                </p>
+                </a>
                 <p style={{
                   fontSize: '13px',
                   color: 'var(--color-text-secondary)',

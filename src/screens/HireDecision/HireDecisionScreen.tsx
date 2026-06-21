@@ -1,14 +1,12 @@
-import { motion } from 'framer-motion'
 import { useAppStore } from '../../store/useAppStore'
 import { useScrollToTop } from '../../hooks/useScrollToTop'
 import { BackButton } from '../../components/ui/BackButton'
-import { TraitCard } from './TraitCard'
-import { cultureFitTraits } from '../../data/cultureFit'
-import { DURATION, EASING } from '../../constants/tokens'
+import { DecisionButtons } from './DecisionButtons'
+import { DecisionResponse } from './DecisionResponse'
 
-export function CultureFitScreen() {
+export function HireDecisionScreen() {
   useScrollToTop()
-  const setScreen = useAppStore((state) => state.setScreen)
+  const decision = useAppStore((state) => state.decision)
 
   return (
     <div style={{
@@ -46,7 +44,7 @@ export function CultureFitScreen() {
           letterSpacing: '0.15em',
           color: 'var(--color-text-muted)',
         }}>
-          FINAL REVIEW
+          FINAL DECISION
         </span>
       </div>
 
@@ -65,7 +63,7 @@ export function CultureFitScreen() {
               color: 'var(--color-text-muted)',
               marginBottom: '8px',
             }}>
-              CULTURE FIT
+              END OF SIMULATION
             </p>
             <h1 style={{
               fontSize: '28px',
@@ -73,58 +71,19 @@ export function CultureFitScreen() {
               color: 'var(--color-text-primary)',
               marginBottom: '8px',
             }}>
-              How I Work
+              What's your call?
             </h1>
             <p style={{
               fontSize: '14px',
               color: 'var(--color-text-secondary)',
               lineHeight: 1.6,
             }}>
-              Beyond the code — a look at working style and values.
+              You've reviewed the profile, the projects, and the interview. Make your decision.
             </p>
           </div>
 
-          <div style={{
-            display: 'grid',
-            gridTemplateColumns: 'repeat(2, 1fr)',
-            gap: '16px',
-          }}>
-            {cultureFitTraits.map((trait, index) => (
-              <TraitCard
-                key={trait.id}
-                title={trait.title}
-                description={trait.description}
-                index={index}
-              />
-            ))}
-          </div>
-
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: DURATION.normal / 1000, delay: 0.5, ease: EASING.outExpo }}
-            style={{ marginTop: '28px', display: 'flex', justifyContent: 'flex-end' }}
-          >
-            <motion.button
-              onClick={() => setScreen('hire-decision')}
-              whileHover={{ scale: 1.01 }}
-              whileTap={{ scale: 0.98 }}
-              style={{
-                padding: '12px 24px',
-                backgroundColor: 'var(--color-accent)',
-                color: 'var(--color-bg-primary)',
-                border: 'none',
-                borderRadius: 'var(--radius-md)',
-                fontSize: '14px',
-                fontWeight: 600,
-                fontFamily: 'var(--font-sans)',
-                cursor: 'pointer',
-                letterSpacing: '0.02em',
-              }}
-            >
-              Make Final Decision →
-            </motion.button>
-          </motion.div>
+          <DecisionButtons />
+          <DecisionResponse decision={decision} />
         </div>
       </div>
 

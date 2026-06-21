@@ -27,7 +27,7 @@ export function ResumeReviewScreen() {
         padding: '20px 32px',
         borderBottom: '1px solid var(--color-border-subtle)',
         flexShrink: 0,
-        maxWidth: '960px',
+        maxWidth: '1040px',
         margin: '0 auto',
         width: '100%',
       }}>
@@ -53,7 +53,7 @@ export function ResumeReviewScreen() {
       <div style={{ flex: 1, overflowY: 'auto' }}>
         <div style={{
           width: '100%',
-          maxWidth: '820px',
+          maxWidth: '880px',
           margin: '0 auto',
           padding: '48px 24px',
         }}>
@@ -95,7 +95,7 @@ export function ResumeReviewScreen() {
         padding: '16px 32px',
         borderTop: '1px solid var(--color-border-subtle)',
         flexShrink: 0,
-        maxWidth: '960px',
+        maxWidth: '1040px',
         margin: '0 auto',
         width: '100%',
       }}>

@@ -6,6 +6,7 @@ import { ResumeReviewScreen } from "./screens/ResumeReview/ResumeReviewScreen"
 import { TechnicalAssessmentScreen } from "./screens/TechnicalAssessment/TechnicalAssessmentScreen"
 import { CrossExaminationScreen } from "./screens/CrossExamination/CrossExaminationScreen"
 import { CultureFitScreen } from "./screens/CultureFit/CultureFitScreen"
+import { HireDecisionScreen } from "./screens/HireDecision/HireDecisionScreen"
 
 function App() {
   const currentScreen = useAppStore((state) => state.currentScreen)
@@ -19,6 +20,7 @@ function App() {
         { currentScreen === 'technical-assessment' && <TechnicalAssessmentScreen /> }
         { currentScreen === 'cross-examination' && <CrossExaminationScreen /> }
         { currentScreen === 'culture-fit' && <CultureFitScreen /> }
+        { currentScreen === 'hire-decision' && <HireDecisionScreen /> }
       </motion.div>
     </AnimatePresence>
   )

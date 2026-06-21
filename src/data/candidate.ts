@@ -3,7 +3,7 @@ import type { CandidateProfile } from '../types'
 export const candidate: CandidateProfile = {
   name: 'Rifat Ahmed',
   title: 'Frontend Developer',
-  tagline: 'I am a self-taught Frontend Developer who builds AI-powered web applications from the ground up. Without a formal CS degree, I learned React, TypeScript, and modern web technologies through consistent practice and real projects. I focus on creating intelligent, user-friendly interfaces that solve genuine problems for real people.',
+  tagline: 'I am a self-taught Frontend Developer who builds AI-powered web applications from the ground up. Without a formal CS degree, I learned React, TypeScript, and modern web technologies through consistent practice, real projects, and a genuine willingness to be wrong and start over. I am still learning industry best practices — and actively chasing that growth.',
   location: 'Dhaka, Bangladesh',
 
   skills: [
@@ -97,10 +97,11 @@ export const candidate: CandidateProfile = {
       company: 'Skyscanner',
       role: 'Front-End Software Engineering',
       platform: 'Forage',
+      verifyUrl: 'https://www.theforage.com/completion-certificates/skoQmxqhtgWmKv2pm/km4rw7dihDr3etqom_skoQmxqhtgWmKv2pm_69464a7e55d5b379b1777221_1779597126019_completion_certificate.pdf',
       tasks: [
-        'Built a date picker component following Skyscanner\'s Backpack design system',
-        'Wrote unit tests using Jest to ensure component reliability',
-        'Practiced working within a real-world component-driven frontend codebase',
+        'Completed a job simulation where I built a web application using React as a front-end engineer at Skyscanner.',
+        'Developed a page for picking a travel date using Skyscanner’s open-source Backpack React library.',
+        'Customised my application and ran automated tests to ensure it rendered properly.',
       ],
     },
   ],

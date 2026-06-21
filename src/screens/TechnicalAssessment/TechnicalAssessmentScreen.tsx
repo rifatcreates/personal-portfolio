@@ -25,7 +25,7 @@ export function TechnicalAssessmentScreen() {
         padding: '20px 32px',
         borderBottom: '1px solid var(--color-border-subtle)',
         flexShrink: 0,
-        maxWidth: '960px',
+        maxWidth: '1040px',
         margin: '0 auto',
         width: '100%',
       }}>
@@ -51,7 +51,7 @@ export function TechnicalAssessmentScreen() {
       <div style={{ flex: 1, overflowY: 'auto' }}>
         <div style={{
           width: '100%',
-          maxWidth: '820px',
+          maxWidth: '880px',
           margin: '0 auto',
           padding: '48px 24px',
         }}>
@@ -77,6 +77,31 @@ export function TechnicalAssessmentScreen() {
           {candidate.projects.map((project, index) => (
             <ProjectDeepDive key={project.id} project={project} index={index} />
           ))}
+
+          <div style={{
+            backgroundColor: 'var(--color-bg-surface)',
+            border: '1px solid var(--color-border)',
+            borderRadius: 'var(--radius-lg)',
+            padding: '20px 24px',
+            marginBottom: '20px',
+          }}>
+            <p style={{
+              fontFamily: 'var(--font-mono)',
+              fontSize: '11px',
+              letterSpacing: '0.1em',
+              color: 'var(--color-text-muted)',
+              marginBottom: '10px',
+            }}>
+              A NOTE ON WHERE I AM
+            </p>
+            <p style={{
+              fontSize: '13px',
+              color: 'var(--color-text-secondary)',
+              lineHeight: 1.7,
+            }}>
+              I'm self-taught and a fresher — there are tools and patterns above I've used only a handful of times, and I won't pretend otherwise. What I can promise is that I learn fast, I ask when I'm stuck instead of guessing, and I'm fully open to relearning something the "right" way if my self-taught version misses industry standards.
+            </p>
+          </div>
 
           <motion.div
             initial={{ opacity: 0 }}
@@ -111,7 +136,7 @@ export function TechnicalAssessmentScreen() {
         padding: '16px 32px',
         borderTop: '1px solid var(--color-border-subtle)',
         flexShrink: 0,
-        maxWidth: '960px',
+        maxWidth: '1040px',
         margin: '0 auto',
         width: '100%',
       }}>

@@ -32,7 +32,8 @@ export interface VirtualExperience {
     id: string
     company: string
     role: string
-    platform: string
+    platform: 'Forage'
+    verifyUrl: string
     tasks: string[]
 }
 
