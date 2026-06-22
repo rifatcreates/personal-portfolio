@@ -5,9 +5,11 @@ import { BackButton } from '../../components/ui/BackButton'
 import { TraitCard } from './TraitCard'
 import { cultureFitTraits } from '../../data/cultureFit'
 import { DURATION, EASING } from '../../constants/tokens'
+import { useIsMobile } from '../../hooks/useIsMobile'
 
 export function CultureFitScreen() {
   useScrollToTop()
+  const isMobile = useIsMobile()
   const setScreen = useAppStore((state) => state.setScreen)
 
   return (
@@ -18,27 +20,32 @@ export function CultureFitScreen() {
       flexDirection: 'column',
     }}>
 
+      {/* Top bar */}
       <div style={{
         display: 'flex',
-        alignItems: 'center',
+        flexDirection: isMobile ? 'column' : 'row',
+        alignItems: isMobile ? 'flex-start' : 'center',
         justifyContent: 'space-between',
-        padding: '20px 32px',
+        gap: isMobile ? '8px' : '0',
+        padding: isMobile ? '14px 16px' : '20px 32px',
         borderBottom: '1px solid var(--color-border-subtle)',
         flexShrink: 0,
         maxWidth: '1040px',
         margin: '0 auto',
         width: '100%',
       }}>
-        <div style={{ display: 'flex', alignItems: 'center', gap: '20px' }}>
+        <div style={{ display: 'flex', alignItems: 'center', gap: '16px' }}>
           <BackButton />
-          <span style={{
-            fontFamily: 'var(--font-mono)',
-            fontSize: '11px',
-            letterSpacing: '0.15em',
-            color: 'var(--color-text-muted)',
-          }}>
-            HIRING PORTAL v1.0
-          </span>
+          {!isMobile && (
+            <span style={{
+              fontFamily: 'var(--font-mono)',
+              fontSize: '11px',
+              letterSpacing: '0.15em',
+              color: 'var(--color-text-muted)',
+            }}>
+              HIRING PORTAL v1.0
+            </span>
+          )}
         </div>
         <span style={{
           fontFamily: 'var(--font-mono)',
@@ -55,7 +62,7 @@ export function CultureFitScreen() {
           width: '100%',
           maxWidth: '880px',
           margin: '0 auto',
-          padding: '48px 24px',
+          padding: isMobile ? '32px 16px' : '48px 24px',
         }}>
           <div style={{ marginBottom: '28px' }}>
             <p style={{
@@ -68,7 +75,7 @@ export function CultureFitScreen() {
               CULTURE FIT
             </p>
             <h1 style={{
-              fontSize: '28px',
+              fontSize: isMobile ? '22px' : '28px',
               fontWeight: 600,
               color: 'var(--color-text-primary)',
               marginBottom: '8px',
@@ -86,7 +93,7 @@ export function CultureFitScreen() {
 
           <div style={{
             display: 'grid',
-            gridTemplateColumns: 'repeat(2, 1fr)',
+            gridTemplateColumns: isMobile ? '1fr' : 'repeat(2, 1fr)',
             gap: '16px',
           }}>
             {cultureFitTraits.map((trait, index) => (
@@ -129,7 +136,7 @@ export function CultureFitScreen() {
       </div>
 
       <div style={{
-        padding: '16px 32px',
+        padding: isMobile ? '12px 16px' : '16px 32px',
         borderTop: '1px solid var(--color-border-subtle)',
         flexShrink: 0,
         maxWidth: '1040px',

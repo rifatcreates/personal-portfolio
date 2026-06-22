@@ -25,6 +25,7 @@ export function QuestionInput({ onSubmit, isLoading }: QuestionInputProps) {
           if (e.key === 'Enter') handleSubmit()
         }}
         placeholder="Ask the candidate a question..."
+        aria-label="Type your interview question"
         style={{
           flex: 1,
           padding: '14px 16px',

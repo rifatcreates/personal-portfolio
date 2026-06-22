@@ -7,9 +7,11 @@ import { CredentialsSection } from './CredentialsSection'
 import { DURATION, EASING } from '../../constants/tokens'
 import { BackButton } from '../../components/ui/BackButton'
 import { useScrollToTop } from '../../hooks/useScrollToTop'
+import { useIsMobile } from '../../hooks/useIsMobile'
 
 export function ResumeReviewScreen() {
   useScrollToTop()
+  const isMobile = useIsMobile()
   const setScreen = useAppStore((state) => state.setScreen)
 
   return (
@@ -20,26 +22,33 @@ export function ResumeReviewScreen() {
       flexDirection: 'column'
     }}>
 
+      {/* Top bar */}
       <div style={{
         display: 'flex',
-        alignItems: 'center',
+        flexDirection: isMobile ? 'column' : 'row',
+        alignItems: isMobile ? 'flex-start' : 'center',
         justifyContent: 'space-between',
-        padding: '20px 32px',
+        gap: isMobile ? '8px' : '0',
+        padding: isMobile ? '14px 16px' : '20px 32px',
         borderBottom: '1px solid var(--color-border-subtle)',
         flexShrink: 0,
         maxWidth: '1040px',
         margin: '0 auto',
         width: '100%',
       }}>
-        <BackButton />
-        <span style={{
-          fontFamily: 'var(--font-mono)',
-          fontSize: '11px',
-          letterSpacing: '0.15em',
-          color: 'var(--color-text-muted)',
-        }}>
-          HIRING PORTAL v1.0
-        </span>
+        <div style={{ display: 'flex', alignItems: 'center', gap: '16px' }}>
+          <BackButton />
+          {!isMobile && (
+            <span style={{
+              fontFamily: 'var(--font-mono)',
+              fontSize: '11px',
+              letterSpacing: '0.15em',
+              color: 'var(--color-text-muted)',
+            }}>
+              HIRING PORTAL v1.0
+            </span>
+          )}
+        </div>
         <span style={{
           fontFamily: 'var(--font-mono)',
           fontSize: '11px',
@@ -55,7 +64,7 @@ export function ResumeReviewScreen() {
           width: '100%',
           maxWidth: '880px',
           margin: '0 auto',
-          padding: '48px 24px',
+          padding: isMobile ? '32px 16px' : '48px 24px',
         }}>
           <CandidateHeader />
           <ProjectsSection />
@@ -92,7 +101,7 @@ export function ResumeReviewScreen() {
       </div>
 
       <div style={{
-        padding: '16px 32px',
+        padding: isMobile ? '12px 16px' : '16px 32px',
         borderTop: '1px solid var(--color-border-subtle)',
         flexShrink: 0,
         maxWidth: '1040px',

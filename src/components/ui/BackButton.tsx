@@ -8,6 +8,7 @@ export function BackButton() {
     <motion.button
       onClick={goBack}
       whileHover={{ x: -2 }}
+      aria-label="Go back to previous screen"
       style={{
         display: 'flex',
         alignItems: 'center',

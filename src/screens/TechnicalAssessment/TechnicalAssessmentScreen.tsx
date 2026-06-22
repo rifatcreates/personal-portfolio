@@ -5,9 +5,11 @@ import { ProjectDeepDive } from './ProjectDeepDive'
 import { DURATION, EASING } from '../../constants/tokens'
 import { BackButton } from '../../components/ui/BackButton'
 import { useScrollToTop } from '../../hooks/useScrollToTop'
+import { useIsMobile } from '../../hooks/useIsMobile'
 
 export function TechnicalAssessmentScreen() {
   useScrollToTop()
+  const isMobile = useIsMobile()
   const setScreen = useAppStore((state) => state.setScreen)
 
   return (
@@ -18,26 +20,33 @@ export function TechnicalAssessmentScreen() {
       flexDirection: 'column',
     }}>
 
+      {/* Top bar */}
       <div style={{
         display: 'flex',
-        alignItems: 'center',
+        flexDirection: isMobile ? 'column' : 'row',
+        alignItems: isMobile ? 'flex-start' : 'center',
         justifyContent: 'space-between',
-        padding: '20px 32px',
+        gap: isMobile ? '8px' : '0',
+        padding: isMobile ? '14px 16px' : '20px 32px',
         borderBottom: '1px solid var(--color-border-subtle)',
         flexShrink: 0,
         maxWidth: '1040px',
         margin: '0 auto',
         width: '100%',
       }}>
-        <BackButton />
-        <span style={{
-          fontFamily: 'var(--font-mono)',
-          fontSize: '11px',
-          letterSpacing: '0.15em',
-          color: 'var(--color-text-muted)',
-        }}>
-          HIRING PORTAL v1.0
-        </span>
+        <div style={{ display: 'flex', alignItems: 'center', gap: '16px' }}>
+          <BackButton />
+          {!isMobile && (
+            <span style={{
+              fontFamily: 'var(--font-mono)',
+              fontSize: '11px',
+              letterSpacing: '0.15em',
+              color: 'var(--color-text-muted)',
+            }}>
+              HIRING PORTAL v1.0
+            </span>
+          )}
+        </div>
         <span style={{
           fontFamily: 'var(--font-mono)',
           fontSize: '11px',
@@ -53,7 +62,7 @@ export function TechnicalAssessmentScreen() {
           width: '100%',
           maxWidth: '880px',
           margin: '0 auto',
-          padding: '48px 24px',
+          padding: isMobile ? '32px 16px' : '48px 24px',
         }}>
           <div style={{ marginBottom: '28px' }}>
             <p style={{
@@ -66,7 +75,7 @@ export function TechnicalAssessmentScreen() {
               TECHNICAL ASSESSMENT
             </p>
             <h1 style={{
-              fontSize: '28px',
+              fontSize: isMobile ? '22px' : '28px',
               fontWeight: 600,
               color: 'var(--color-text-primary)',
             }}>
@@ -133,7 +142,7 @@ export function TechnicalAssessmentScreen() {
       </div>
 
       <div style={{
-        padding: '16px 32px',
+        padding: isMobile ? '12px 16px' : '16px 32px',
         borderTop: '1px solid var(--color-border-subtle)',
         flexShrink: 0,
         maxWidth: '1040px',
