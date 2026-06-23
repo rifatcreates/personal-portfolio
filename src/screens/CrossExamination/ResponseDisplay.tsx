@@ -43,9 +43,41 @@ export function ResponseDisplay({ response, isLoading, error }: ResponseDisplayP
         </div>
 
         {isLoading && (
-          <p style={{ fontSize: '14px', color: 'var(--color-text-secondary)' }}>
-            Generating response...
-          </p>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+            <motion.div
+              animate={{ opacity: [0.3, 1, 0.3] }}
+              transition={{ duration: 1.2, repeat: Infinity, ease: 'easeInOut' }}
+              style={{
+                width: '6px',
+                height: '6px',
+                borderRadius: '50%',
+                backgroundColor: 'var(--color-accent)',
+              }}
+            />
+            <motion.div
+              animate={{ opacity: [0.3, 1, 0.3] }}
+              transition={{ duration: 1.2, repeat: Infinity, ease: 'easeInOut', delay: 0.2 }}
+              style={{
+                width: '6px',
+                height: '6px',
+                borderRadius: '50%',
+                backgroundColor: 'var(--color-accent)',
+              }}
+            />
+            <motion.div
+              animate={{ opacity: [0.3, 1, 0.3] }}
+              transition={{ duration: 1.2, repeat: Infinity, ease: 'easeInOut', delay: 0.4 }}
+              style={{
+                width: '6px',
+                height: '6px',
+                borderRadius: '50%',
+                backgroundColor: 'var(--color-accent)',
+              }}
+            />
+            <span style={{ fontSize: '13px', color: 'var(--color-text-secondary)', marginLeft: '4px' }}>
+              Generating response
+            </span>
+          </div>
         )}
 
         {error && (

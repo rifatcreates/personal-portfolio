@@ -1,73 +1,52 @@
-# React + TypeScript + Vite
+# The Hiring Simulation
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+An interactive, reverse-role portfolio experience — the recruiter becomes the hiring manager of a fictional fintech company and goes through a real hiring process to evaluate me as a candidate.
 
-Currently, two official plugins are available:
+**[Live Demo →](তোমার_vercel_url_এখানে_বসাও)**
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## What This Is
 
-## React Compiler
+Instead of a traditional scroll-down portfolio, this simulates an actual hiring flow:
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+1. **Entry** — Receive a hiring request notification
+2. **Role Briefing** — Review the fictional company and job description
+3. **Resume Review** — See my profile, skills, projects, and credentials
+4. **Technical Assessment** — Deep dive into engineering decisions on real projects
+5. **Cross-Examination** — Ask me anything via a live AI-powered interview (Gemini API)
+6. **Culture Fit** — A look at how I work and what I value
+7. **Hire Decision** — Make the final call
 
-## Expanding the ESLint configuration
+## Tech Stack
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- React 18 + TypeScript (Vite)
+- Tailwind CSS / Inline styling with CSS custom properties
+- Framer Motion for animation
+- Zustand for state management
+- Google Gemini API for the AI interview feature
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+## Why I Built It This Way
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+I'm a self-taught frontend developer without a formal CS background, currently looking for my first role. Rather than listing skills in a static page, I wanted to build something that demonstrates how I think — about state, about user flow, about making technical decisions and being able to explain them.
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+Every project shown in the Technical Assessment screen includes the actual reasoning behind technical choices, not just a list of technologies.
+
+## Running Locally
+
+```bash
+npm install
+npm run dev
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+You'll need a Gemini API key in a `.env.local` file:
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+1. Get a free API key from the [Google AI Studio](https://aistudio.google.com/).
+2. Create a file named `.env.local` in the root directory of this project.
+3. Add your key to the file using the following variable name:
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+```env
+VITE_GEMINI_API_KEY=your_actual_api_key_here
+
+## Contact
+
+- GitHub: [@rifatcreates](https://github.com/rifatcreates)
+- Email: rifat.ahmed.div@gmail.com

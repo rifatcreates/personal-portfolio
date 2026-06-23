@@ -2,12 +2,21 @@ import { motion } from 'framer-motion'
 import { DURATION, EASING } from '../../constants/tokens'
 import { candidate } from '../../data/candidate'
 import type { Decision } from '../../types'
+import { useState } from 'react'
 
 interface DecisionResponseProps {
   decision: Decision
 }
 
 export function DecisionResponse({ decision }: DecisionResponseProps) {
+  const [copied, setCopied] = useState(false)
+
+  const handleCopyEmail = () => {
+    navigator.clipboard.writeText('rifat.ahmed.dev@gmail.com')
+    setCopied(true)
+    setTimeout(() => setCopied(false), 2000)
+  }
+
   if (decision === 'pending') return null
 
   return (
@@ -69,8 +78,8 @@ export function DecisionResponse({ decision }: DecisionResponseProps) {
               View GitHub
             </a>
             
-            <a
-              href="mailto:rifat.ahmed.dev@gmail.com"
+            <button
+              onClick={handleCopyEmail}
               style={{
                 fontFamily: 'var(--font-sans)',
                 fontSize: '13px',
@@ -79,11 +88,12 @@ export function DecisionResponse({ decision }: DecisionResponseProps) {
                 border: '1px solid var(--color-border)',
                 color: 'var(--color-text-secondary)',
                 borderRadius: 'var(--radius-md)',
-                textDecoration: 'none',
+                backgroundColor: 'transparent',
+                cursor: 'pointer',
               }}
             >
-              Send Email
-            </a>
+              {copied ? 'Copied!' : 'Copy Email'}
+            </button>
 
             <a href="tel:+8801886661618"
               style={{
@@ -147,8 +157,8 @@ export function DecisionResponse({ decision }: DecisionResponseProps) {
               View GitHub
             </a>
             
-            <a
-              href="mailto:rifat.ahmed.dev@gmail.com"
+            <button
+              onClick={handleCopyEmail}
               style={{
                 fontFamily: 'var(--font-sans)',
                 fontSize: '13px',
@@ -157,11 +167,12 @@ export function DecisionResponse({ decision }: DecisionResponseProps) {
                 border: '1px solid var(--color-border)',
                 color: 'var(--color-text-secondary)',
                 borderRadius: 'var(--radius-md)',
-                textDecoration: 'none',
+                backgroundColor: 'transparent',
+                cursor: 'pointer',
               }}
             >
-              Send Email
-            </a>
+              {copied ? 'Copied!' : 'Copy Email'}
+            </button>
 
             <a href="tel:+8801886661618"
               style={{
