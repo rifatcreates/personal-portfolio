@@ -2,7 +2,7 @@
 
 An interactive, reverse-role portfolio experience — the recruiter becomes the hiring manager of a fictional fintech company and goes through a real hiring process to evaluate me as a candidate.
 
-**[Live Demo →](তোমার_vercel_url_এখানে_বসাও)**
+**[Live Demo →](https://personal-portfolio-two-pied-45.vercel.app/)**
 
 ## What This Is
 
