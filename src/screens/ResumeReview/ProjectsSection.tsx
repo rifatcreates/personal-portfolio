@@ -1,10 +1,11 @@
-// Project cards showing candidate's work
-
 import { motion } from 'framer-motion'
 import { DURATION, EASING } from '../../constants/tokens'
 import { candidate } from '../../data/candidate'
+import { useIsMobile } from '../../hooks/useIsMobile'
 
 export function ProjectsSection() {
+  const isMobile = useIsMobile()
+
   return (
     <motion.div
       initial={{ opacity: 0 }}
@@ -48,9 +49,10 @@ export function ProjectsSection() {
               <div
                 style={{
                   display: 'flex',
-                  alignItems: 'flex-start',
+                  flexDirection: isMobile ? 'column' : 'row',
+                  alignItems: isMobile ? 'flex-start' : 'flex-start',
                   justifyContent: 'space-between',
-                  gap: '12px',
+                  gap: isMobile ? '12px' : '12px',
                   marginBottom: '8px',
                   flexWrap: 'wrap',
                 }}
