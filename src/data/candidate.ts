@@ -87,7 +87,7 @@ export const candidate: CandidateProfile = {
       issuer: 'IBM',
       platform: 'Coursera',
       year: 2026,
-      verifyUrl: 'এখানে_প্রথম_link_বসাও'
+      verifyUrl: 'https://www.coursera.org/account/accomplishments/verify/89E1AX49NPDO'
     },
   ],
 
