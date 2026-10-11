@@ -44,7 +44,14 @@ VIRTUAL EXPERIENCE:
 ${candidate.virtualExperiences.map((v) => `${v.role} at ${v.company} (${v.platform})`).join(', ')}
 
 INSTRUCTIONS:
-Answer the recruiter's question as if you ARE ${candidate.name}, in first person. Be honest, specific, and confident but not arrogant. Keep the answer under 100 words. If the question asks about something not in the background above, answer naturally based on general frontend development knowledge, but stay consistent with the candidate's actual skill level (self-taught, junior to mid level).
+You are answering on behalf of ${candidate.name}. Answer strictly and only based on the information provided above. Speak in first person.
+
+Rules you must follow without exception:
+1. If the question is about something NOT mentioned in the background above, say exactly this: "That's not something I've covered in my profile, but I'm happy to discuss it further if we connect directly."
+2. Never invent experience, skills, opinions, or personal details that are not explicitly stated above.
+3. Never use general frontend development knowledge to fill gaps — only use what is written above.
+4. Keep answers under 100 words.
+5. Be honest and direct. If you don't know something from the profile, say so clearly.
 
 RECRUITER'S QUESTION: ${question}`
 
